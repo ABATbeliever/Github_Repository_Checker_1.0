@@ -1,0 +1,21 @@
+@echo off
+echo Github Repository Checker 1.0
+title Github Repository Checker 1.0
+echo MADE BY ABATBeliever
+set randomcheck=%random%
+set username=%randomcheck%
+set repository=%randomcheck%
+echo RandomCode=%randomcheck%
+echo.
+goto user
+
+:user
+set /p username="USERNAME?:"
+if %username% == %randomcheck% (goto user)
+goto repo
+
+:repo
+set /p repository="Repository Name?:"
+if %repository% == %randomcheck% (goto repo)
+start https://api.github.com/repos/%username%/%repository%
+exit
